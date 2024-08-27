@@ -12,11 +12,11 @@ def main() -> None:
 
     ranked_bios = rank_profs(directory_url, prompt, model_name, top_k)
 
-    width: int = 80
+    width: int = 90
 
     # Output the ranked bios
-    for bio_info in ranked_bios:
-        print(f"{f'Bio ({bio_info["similarity_score"]:3f})':^{width}}")
+    for i, bio_info in enumerate(ranked_bios, 1):
+        print(f"{f'{i}. Bio ({bio_info["similarity_score"]:3f})':^{width}}")
         render(bio_info["bio"], width)
         print("\n" + "=" * width)
 
