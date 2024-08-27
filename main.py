@@ -1,3 +1,4 @@
+from utils.display import render
 from utils.ranking import rank_profs
 
 
@@ -11,11 +12,13 @@ def main() -> None:
 
     ranked_bios = rank_profs(directory_url, prompt, model_name, top_k)
 
+    width: int = 80
+
     # Output the ranked bios
     for bio_info in ranked_bios:
-        print(f"Bio: {bio_info['bio']}")
-        print(f"Similarity Score: {bio_info['similarity_score']}")
-        print("-" * 40)
+        print(f"{f'Bio ({bio_info["similarity_score"]:3f})':^{width}}")
+        render(bio_info["bio"], width)
+        print("\n" + "=" * width)
 
 
 if __name__ == "__main__":
