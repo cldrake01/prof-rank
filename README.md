@@ -2,7 +2,7 @@
 
 ## Description
 
-As of now, this works specifically for the CU Boulder website, but it can be easily modified to work with other
+As of now, this works specifically for the CU Boulder CS website, but it can be easily modified to work with other
 websites.
 
 `prof-rank` allows you to rank professors based upon their bio's similarity to a given query. The bios are scraped from
